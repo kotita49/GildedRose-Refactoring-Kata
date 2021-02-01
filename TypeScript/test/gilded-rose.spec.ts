@@ -39,8 +39,13 @@ new Item("Backstage passes to a TAFKAL80ETC concert", 4, 50)
 ])
     });
 
-    // it('backstage ticket', (){
-
-    // })
+    it('Brie', function(){
+        const items = [new Item("Aged Brie", 5, 10)];
+        const gildedRose = new GildedRose(items);
+//Act
+            const updatedItems = gildedRose.updateQuality();
+            //Assert
+            expect(updatedItems).to.deep.include.members([ new Item("Aged Brie", 4, 11)])
+    })
 
 });
