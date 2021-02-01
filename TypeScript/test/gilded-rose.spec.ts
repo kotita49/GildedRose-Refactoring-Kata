@@ -79,4 +79,15 @@ new Item("Backstage passes to a TAFKAL80ETC concert", 4, 46)
             new Item("+5 Dexterity Vest", 14, 24)])
     });
 
+    it('Conjured', function(){
+        const items = [
+        new Item("Conjured Mana Cake", 6, 10)
+            ];
+        const gildedRose = new GildedRose(items);
+//Act
+            const updatedItems = gildedRose.updateQuality();
+            //Assert
+            expect(updatedItems).to.deep.include.members([new Item("Conjured Mana Cake", 5, 8)])
+    });
+
 });
